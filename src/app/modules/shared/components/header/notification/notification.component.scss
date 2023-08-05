@@ -1,0 +1,21 @@
+.dropdown-notification {
+  right: 0 ;
+  left: inherit ;
+  width: 30rem;
+  top: 0;
+  height: 100vh;
+  z-index: 333333333333;
+  box-shadow:  var(--shadow2);
+
+.child-dropdown-menu{
+  top: 2.3rem !important;
+  left: inherit !important;
+}
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc !important;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-white-color) !important;
+}

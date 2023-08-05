@@ -1,0 +1,140 @@
+<div class="tasks">
+  <div class="row">
+    <div class="col-md-3 bg-white-color shadow-sm h-100 addTask">
+      <div class="p-4">
+        <form [formGroup]="tasksForm">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Task Name</mat-label>
+            <input matInput formControlName="item">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>add task name</mat-hint>
+          </mat-form-field>
+          <button class="btn btn-solid-main p-2 w-100 mt-4" [disabled]="tasksForm.invalid" (click)="addTask()"
+            *ngIf="!isEditEnable">Add Task</button>
+          <button class="btn btn-warning p-2 w-100 mt-4" *ngIf="isEditEnable" (click)="editTask()">edit</button>
+        </form>
+        <div>
+          <button class="btn bg-light p-2 w-100 my-4" (click)="openCardForm=true">Add New Card</button>
+          <form [formGroup]="cardForm" *ngIf="openCardForm">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Task Name</mat-label>
+              <input matInput formControlName="card">
+              <mat-hint>add new card</mat-hint>
+            </mat-form-field>
+            <div class="mt-4 d-flex justify-content-around">
+              <button class="btn bg-light p-2 px-3" (click)="addCard([])">Add New Card</button>
+              <button class="btn bg-main-color text-white-color p-2 px-3" (click)="openCardForm=false">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 showTasks h-100">
+      <div cdkDropListGroup class="py-4 px-3">
+        <div class="d-flex allCards">
+          <div class="cardContent" *ngFor="let c of cards;let e=index">
+            <!-- to do -->
+            <div class="example-container">
+              <div class="d-flex justify-content-between">
+                <h2 class="mb-3">{{c.name}}
+                  <ng-container *ngIf="(c.t).length>0">
+                    <span class="text-muted-color ms-2">{{(c.t).length}}</span>
+                  </ng-container>
+                </h2>
+                <div class="dropdown">
+                  <a class="bg-white-color shadow-sm py-1 px-2 rounded-1 text-muted-color dropdown-toggle" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-ellipsis-vertical"></i>
+                  </a>
+                  <ul class="dropdown-menu border-0 shadow-sm mt-2">
+                    <li><a class="dropdown-item py-2" (click)="deleteCard(e)">delete</a></li>
+                    <li><a class="dropdown-item py-2">show</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div cdkDropList [cdkDropListData]="c.t" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box bg-white-color shadow-sm px-2 py-3 rounded"
+                  *ngFor="let item of c.t ; let i=index" cdkDrag>
+                  <div class="d-flex align-items-center justify-content-between ">
+                    <p>{{item.description}}</p>
+                    <div class="icons">
+                      <a (click)="deleteTask(e,c.t,i)"><i class="fas fa-trash text-danger"></i></a>
+                      <a (click)="onEdit(item,i)" *ngIf="c.name=='To Do'"><i
+                          class="fas fa-pen text-muted-color ms-3"></i></a>
+                      <i class="fas fa-circle-check text-success-color ms-3" *ngIf="c.name=='Done'"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <small class="text-muted-color"><i class="far fa-clock me-1"></i> {{item.time|timeago}}</small>
+                    <img [src]="userData.photo" onerror="this.src='assets/imgs/person3.jpg'"
+                      class="rounded-circle profile-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- <div class="col">
+            <div class="example-container">
+              <h2 class="mb-3">In Progress
+                <ng-container *ngIf="inProgress.length>0">
+                  <span class="text-muted-color ms-2">{{inProgress.length}}</span>
+                </ng-container>
+              </h2>
+
+              <div
+                cdkDropList
+                [cdkDropListData]="inProgress"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box bg-white-color shadow-sm px-2 py-3"*ngFor="let item of inProgress ; let i=index" cdkDrag>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p>{{item.description}}</p>
+                  <div class="icons">
+                    <a (click)="deleteInProgressTask(i)"><i class="fas fa-trash text-danger"></i></a>
+                  </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <small class="text-muted-color"><i class="far fa-clock me-1"></i> {{item.time|timeago}}</small>
+                    <img [src]="userData.photo" onerror="this.src='assets/imgs/person3.jpg'" class="rounded-circle profile-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col">
+            <div class="example-container">
+              <h2 class="mb-3">Done
+                <ng-container *ngIf="done.length>0">
+                  <span class="text-muted-color ms-2">{{done.length}}</span>
+                </ng-container>
+              </h2>
+
+              <div
+                cdkDropList
+                [cdkDropListData]="done"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box bg-white-color shadow-sm px-2 py-3"*ngFor="let item of done ; let i=index" cdkDrag>
+                  <div class="d-flex align-items-center justify-content-between ">
+                    <p>{{item.description}}</p>
+                  <div class="icons">
+                    <a (click)="deleteDoneTask(i)"><i class="fas fa-trash text-danger me-3"></i></a>
+                    <i class="fas fa-circle-check text-success-color"></i>
+                  </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <small class="text-muted-color"><i class="far fa-clock me-1"></i> {{item.time|timeago}}</small>
+                    <img [src]="userData.photo" onerror="this.src='assets/imgs/person3.jpg'" class="rounded-circle profile-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

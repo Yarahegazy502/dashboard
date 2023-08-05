@@ -1,0 +1,74 @@
+<!-- <div class="home">
+  <div class="hero-section">
+    <div class="">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators d-flex justify-content-start align-items-center gap-3 mx-4">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active dot dot1" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" class="dot dot2" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="dot dot3" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="dot dot4" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="">
+              <div class="row">
+                <div class="col-md-6 d-flex align-items-center carousel-content">
+                  <div class="container-fluid">
+                    <strong class="text-main-color">welcome in my website</strong>
+                    <h1 class="mb-3 fs-lg">Lorem ipsum consectetur</h1>
+                    <p class="mb-5 text-muted lh-sm fs-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia natus beatae minima alias id cum nam nihil quas possimus sed consequatur laborum saepe officia modi hic, nobis non est Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia natus beatae minima alias id cum nam nihil quas possimus sed consequatur laborum saepe officia modi hic, nobis non est?</p>
+                    <button class="btn px-3 bg-main-color py-2 text-white-color">VIEW MORE</button>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div class="img position-absolute" [style.backgroundColor]="bg">
+                    </div>
+                    <div class="img-content">
+                      <img src="https://mannatthemes.com/selfown/default/images/personal/1.png" alt="" class="w-100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia natus beatae minima alias id cum nam nihil quas possimus sed consequatur laborum saepe officia modi hic, nobis non est?2</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia natus beatae minima alias id cum nam nihil quas possimus sed consequatur laborum saepe officia modi hic, nobis non est?3</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia natus beatae minima alias id cum nam nihil quas possimus sed consequatur laborum saepe officia modi hic, nobis non est?3</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div *ngFor="let i of items" class="home">
+  <!-- {{i.name}} -->
+  <div *ngFor="let ii of i.services">
+    {{ii.name}}
+  </div>
+</div>
+<button (click)="i()">add</button>
+<button (click)="d()">delete</button>
+<div *ngFor="let i of added" class="mt-4">
+  <p>{{i.name}}</p>
+</div>

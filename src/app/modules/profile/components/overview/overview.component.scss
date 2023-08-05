@@ -1,0 +1,67 @@
+.overview{
+  .profile-img{
+    .online{
+      width: 20px;
+    height: 20px;
+    right: -10px;
+    border: 4px solid #fff;
+    bottom: 21%;
+    }
+  }
+  .progress{
+    height: .4rem;
+  }
+  .rates{
+    border: 1px dashed #ccc;
+    .rate-img{
+      width: 50px;
+    }
+  }
+  .nav{
+    .nav-item{
+      .nav-link{
+        color: var(--muted);
+        font-size: 16px;
+      }
+    }
+  }
+  .active-link{
+    color: var(--text-main-color);
+  }
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: var(--text-main-color) !important;
+    background-color: transparent;
+    border-bottom: 2px solid var(--bg-main-color);
+    border-radius: 0;
+
+  }
+  #myChart{
+    height: 360px;
+  }
+  .order-details{
+    height: 29rem;
+    overflow-y: auto;
+  }
+  table > :not(caption) > * > * {
+    padding: 1.2rem 0.5rem !important;
+  }
+  .table-content{
+    overflow-x: auto;
+    // tr{
+    //   th,td{
+    //     width: 5rem;
+    //   }
+    // }
+  }
+  .general-dropdown .dropdown-menu.show {
+    top: 1rem !important;
+  }
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc !important;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-white-color) !important;
+}
+

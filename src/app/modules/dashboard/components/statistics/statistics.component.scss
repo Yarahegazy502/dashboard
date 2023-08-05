@@ -1,0 +1,35 @@
+.statistics {
+  .statistics-info {
+    background-color: #f4f6fa;
+    height: 120px;
+
+    .active {
+      font-size: 8px;
+    }
+
+    .statistics-icon {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+
+  .chart {
+    height: 300px;
+  }
+
+  .activeBtn {
+    background-color: var(--bg-main-color);
+    color: var(--text-white-color);
+    border: 1px solid var(--text-main-color);
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    padding: 10px !important;
+  }
+
+  .mat-form-field-flex {
+    // border: 1px solid #777 !important;
+  }
+}

@@ -1,0 +1,21 @@
+.rates{
+  border: 1px dashed #ccc;}
+.lav{
+  color: #7539ea;
+}
+.activeBtn.b{
+  border-bottom: 2px solid var(--text-main-color) !important;
+  border-radius: 0px;
+  color: var(--text-dark-color);
+}
+.b{
+  color: var(--muted);
+}
+table > :not(caption) > * > * {
+  padding: 1.2rem 0.5rem !important;
+}
+.table{
+  overflow-x: auto;
+  width: 100%;
+  min-width: 570px;
+}

@@ -1,0 +1,145 @@
+.buttonior-chat{
+  bottom: 45px;
+  right: 90px;
+  transition: all .3s ease-in-out;
+  z-index: 2;
+  .fa-plus{
+    display: none;
+  }
+  &:hover{
+    .fa-plus{
+      display: block;
+    }
+    .fa-comments{
+      display: none;
+    }
+  .social-icons{
+    visibility: visible;
+    // display: block;
+  transition: all .3s ease-in-out;
+  z-index: 777;
+
+  }
+  .telegram{
+    color: rgb(0 136 204);
+    transform: translate(0px,-170px);
+
+  }
+   .twitter{
+      color: rgb(29 161 242);
+    transform: translate(-55px,-130px);
+
+    }
+    .whatsapp{
+      color: rgb(37 211 102);
+    transform: translate(-70px,0px);
+
+    }
+    .skype{
+      color: rgb(0 175 240);
+    transform: translate(-130px,0px);
+
+    }
+    .messenger{
+      color: rgb(0 106 255);
+    transform: translate(-110px,-80px);
+
+    }
+    .phone{
+      color: rgb(0 122 255);
+    transform: translate(-0px,-100px);
+
+    }
+    .mail{
+      color: rgb(234 67 53);
+    transform: translate(-45px, -56px);
+
+    }
+  .lets-chat{
+    visibility: hidden;
+  }
+  }
+  .chat-icon{
+    border-radius: 0.25rem;
+    width: 60px;
+    height: 50px;
+    background-image: radial-gradient(#ff4e77 0%, #ff184e 100%);;
+  }
+  .chat{
+    animation: chat2   1s  linear infinite
+    // ,chat2 1s  infinite;
+  }
+  .social-icons{
+    position: relative;
+    left: 95px;
+    top: -62px;
+    visibility: hidden;
+  transition: all .3s ease-in-out;
+
+    span{
+      width: 40px;
+      height: 40px;
+      background-color: var(--bg-white-color);
+      position: absolute;
+  transition: all .3s ease-in-out;
+  z-index: -1;
+
+    }
+    .telegram{
+      color: rgb(0 136 204);
+      transition: all .3s  ease-in-out;
+        transition-delay: .5s;
+    }
+    .twitter{
+      color: rgb(29 161 242);
+      transition: all .3s  ease-in-out;
+      transition-delay: .6s;
+
+    }
+    .whatsapp{
+      color: rgb(37 211 102);
+      transition: all .3s  ease-in-out;
+      transition-delay: .7s;
+
+    }
+    .skype{
+      color: rgb(0 175 240);
+      transition: all .3s  ease-in-out;
+      transition-delay: .8s;
+    }
+    .messenger{
+      color: rgb(0 106 255);
+      transition: all .3s  ease-in-out;
+      transition-delay: .9s;
+
+    }
+    .phone{
+      color: rgb(0 122 255);
+      transition: all .3s  ease-in-out;
+      transition-delay: 1s;
+
+    }
+    .mail{
+      color: rgb(234 67 53);
+      transition: all .3s  ease-in-out;
+      transition-delay: 1.01s;
+
+    }
+  }
+  @keyframes chat-animation {
+    0% { transform: scale(1); }
+    // 25% { transform: scale(1.05);   }
+    // 25% { transform: rotate(5deg); }
+    // 50% { transform: rotate(-5deg); }
+    // 75% { transform: scale(1.1); }
+    100% {transform: scale(1.1); }
+  }
+  @keyframes chat2 {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+}
+

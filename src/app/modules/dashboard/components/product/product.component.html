@@ -1,0 +1,140 @@
+<div class="product">
+  <div class="container">
+    <div class="bg-white-color shad mx-5 round p-5">
+      <form [formGroup]="productForm">
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <label for="name" class="mb-2">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name" [class.is-valid]="productFormControls?.name?.valid && productFormControls?.name?.touched" [class.is-invalid]="(productFormControls?.name?.touched || productFormControls?.name?.dirty) && productFormControls?.name?.invalid">
+            <div class="form-text d-block text-start text-danger"
+                  [class.d-none]="productFormControls?.name?.valid || productFormControls?.name?.untouched"><small>Name required.</small></div>
+          </div>
+          <div class="col-md-6">
+            <label for="price" class="mb-2">Price</label>
+            <input type="number" class="form-control" id="price" placeholder="Price" formControlName="price" [class.is-valid]="productFormControls?.price?.valid && productFormControls?.price?.touched" [class.is-invalid]="(productFormControls?.price?.touched || productFormControls?.price?.dirty) && productFormControls?.price?.invalid"/>
+            <div class="form-text d-block text-start text-danger"
+                  [class.d-none]="productFormControls?.price?.valid || productFormControls?.price?.untouched"><small>price required.</small></div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <!-- <angular-editor class="editor" [(ngModel)]="htmlContent" [config]="editorConfig"></angular-editor> -->
+
+          <label for="description" class="mb-2">Description</label>
+          <textarea id="description" class="form-control"></textarea>
+        </div>
+        <div class="mb-4">
+          <div class="row w-100 d-flex justify-content-center align-items-center uploader">
+            <div class="col-md-6">
+              <label
+            class="w-100 d-flex align-items-center justify-content-center"
+            ondragover="return false;"
+            [class.loaded]="loaded"
+            [style.outlineColor]="dragging ? activeColor : baseColor"
+            (dragenter)="handleDragEnter()"
+            (dragleave)="handleDragLeave()"
+            (drop)="handleDrop($event)"
+          >
+
+                <input
+                  #inputFile
+                  type="file"
+                  name="file"
+                  accept="image/*"
+                  (change)="handleInputChange($event)"
+                  hidden
+                  formControlName="img"
+                />
+                <div class="d-flex justify-content-center">
+                  <a
+                    class="fw-bold text-dark-color d-flex flex-column align-items-center"
+                    ><i class="far fa-image fs-4-1 mb-1"></i
+                    ><span>Upload a file or drag drop</span>
+                    <small class="text-muted-color mt-1"
+                      >image should be png jpg gif</small
+                    >
+                  </a>
+                </div>
+
+
+
+          </label>
+            </div>
+            <div class="col-md-6 d-flex justify-content-end" *ngIf="show">
+              <img
+                [src]="imageSrc"
+                (load)="handleImageLoad()"
+                [class.loaded]="imageLoaded"
+                class="m-3"
+              />
+            </div>
+          </div>
+
+        </div>
+        <div class="mb-4 row d-flex align-items-center">
+          <div class="col-md-6">
+            <div class="input-group" [class.border-green]="productFormControls?.date?.valid && productFormControls?.date?.touched" [class.border-red]="(productFormControls?.date?.touched || productFormControls?.date?.dirty) && productFormControls?.date?.invalid">
+              <input
+                type="text"
+                class="form-control"
+                #dp="bsDatepicker"
+                bsDatepicker
+                [bsValue]="bsValue"
+                formControlName="date"
+              />
+              <span class="input-group-text" id="basic-addon1">
+                <button
+                  class="btn"
+                  (click)="dp.toggle()"
+                  [attr.aria-expanded]="dp.isOpen"
+                  type="button"
+                >
+                  <i class="far fa-calendar-days"></i>
+                </button>
+              </span>
+            </div>
+            <div class="form-text d-block text-start text-danger"
+                  [class.d-none]="productFormControls?.date?.valid || productFormControls?.date?.untouched"><small>date required.</small></div>
+          </div>
+          <div class="col-md-6">
+            <!-- <timepicker
+              [(ngModel)]="myTime"
+              [showMinutes]="showMin"
+              [showSeconds]="showSec"
+              formControlName="time"
+            ></timepicker>
+            <div class="form-text d-block text-start text-danger"
+                  [class.d-none]="productFormControls?.time?.valid || productFormControls?.time?.untouched"><small>time required.</small></div> -->
+
+                  <div class="default-time-example">
+                    <input aria-label="default time" [ngxTimepicker]="defaultValue" placeholder="hh:mm" class="form-control" formControlName="time"
+                    [class.is-valid]="productFormControls?.time?.valid && productFormControls?.time?.touched" [class.is-invalid]="(productFormControls?.time?.touched || productFormControls?.time?.dirty) && productFormControls?.time?.invalid">
+                    <ngx-material-timepicker #defaultValue></ngx-material-timepicker>
+                    <div class="form-text d-block text-start text-danger"
+                  [class.d-none]="productFormControls?.time?.valid || productFormControls?.time?.untouched"><small>time required.</small></div>
+               </div>
+
+                  <!-- <input [ngxTimepicker]="picker"> -->
+<!-- <ngx-material-timepicker #picker></ngx-material-timepicker> -->
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="description" class="mb-2">Avalible size</label>
+          <ng-select [multiple]="true" [searchable]="true" [clearSearchOnAdd]="true" notFoundText="no data found" [(ngModel)]="selectedCars" placeholder="Size" formControlName="size" [class.border-green]="productFormControls?.size?.valid && productFormControls?.size?.touched" [class.border-red]="(productFormControls?.size?.touched || productFormControls?.size?.dirty) && productFormControls?.size?.invalid">
+            <ng-option
+              *ngFor="let car of cars"
+              [value]="car.id"
+              [disabled]="car.disabled"
+              >{{ car.name }}</ng-option
+            >
+            <ng-option [value]="'custom'">Custom</ng-option>
+          </ng-select>
+          <div class="form-text d-block text-start text-danger"
+                  [class.d-none]="productFormControls?.size?.valid || productFormControls?.size?.untouched"><small>size required.</small></div>
+        </div>
+        <div class="d-flex justify-content-end">
+        <button class="btn bg-main-color px-5 py-2" (click)="save()" [disabled]="productForm.invalid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

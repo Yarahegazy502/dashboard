@@ -1,0 +1,16 @@
+<owl-carousel-o [options]="customOptions">
+
+  <ng-container *ngFor="let a of arrayList">
+    <ng-template carouselSlide >
+      <div>
+        <h4 class="mb-2">{{a.title}}</h4>
+      <p class="text-muted-color">{{a.p}}</p>
+      <div class="d-sm-flex justify-content-between align-items-center mt-4">
+        <span class="rejected p-1 px-2 round fs-8 fw-bold">{{a.date}}</span>
+        <button class="btn btn-light text-muted-color mt-3 mt-sm-0 d-block">{{a.btn}}</button>
+      </div>
+      </div>
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o>

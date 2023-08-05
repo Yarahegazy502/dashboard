@@ -1,0 +1,30 @@
+.billing{
+  .alert-warn{
+    background-color: #fff8dd;
+    border: 1px dashed #ffe483;
+  }
+  .progress{
+    height: .4rem;
+  }
+  .payment-card{
+    border: 1px dashed #ccc;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: transparent;
+    border-radius: 0 ;
+    border-bottom: 2px solid var(--text-main-color);
+  }
+  .activeBtn{
+    border-bottom: 2px solid var(--text-main-color) !important;
+    border-radius: 0px;
+    color: var(--text-main-color);
+  }
+  table > :not(caption) > * > * {
+    padding: 1.2rem 0.5rem !important;
+  }
+  .table{
+    overflow-x: auto;
+    min-width: 100%;
+    width: 570px;
+  }
+}

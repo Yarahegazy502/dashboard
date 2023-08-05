@@ -1,0 +1,64 @@
+{
+  "ok":"OK",
+  "alertSuccessMsg":"You are logged in successfully",
+  "titles": {
+    "dashboard": "XDash",
+    "statistics":"statistics",
+    "users":"users",
+    "tasks":"tasks",
+    "product":"Product",
+    "dates":"dates"
+  },
+  "form": {
+    "email": "Email address",
+    "password": "Password",
+    "or": "or",
+    "login": {
+      "forgetPassword": "Forget Password ?",
+      "login": "Login",
+      "signInWithGoggle": "Sign in with Google",
+      "notAMember": "Not a member?",
+      "signUp": "Sign up"
+    },
+    "register": {
+      "name": "Name",
+      "confirmPassword": "Confirm Password",
+      "register": "Register",
+      "signUpWithGoggle": "Sign up with Google",
+      "youAreAMember": "Already have an account?",
+      "signIn": "Sign in"
+    }
+  },
+  "header": {
+    "home": "home"
+  },
+  "userInfo": {
+    "name": "Max Smith",
+    "profile": "My Profile",
+    "project": "My Project",
+    "subscribe": "My Subscribe",
+    "notification": "Notification",
+    "statement": "My Statements",
+    "account": "Account Settings",
+    "signOut": "Sign Out"
+  },
+  "language": {
+    "english": "English",
+    "arabic": "Arabic"
+  },
+  "notification": {
+    "notification": "Notifications",
+    "all": "All",
+    "unread": "Unread",
+    "readMore": "Read More"
+  },
+  "sideMenu": {
+    "statistic": "Statistic",
+    "customer": "User",
+    "tasks":"Tasks",
+    "supplier": "Supplier",
+    "product":"Product",
+    "dates":"Dates"
+
+  }
+}

@@ -1,0 +1,41 @@
+table > :not(caption) > * > * {
+  padding: .7rem 0.5rem !important;
+}
+.table{
+  overflow-x: auto;
+  width: 100%;
+  min-width: 650px;
+}
+.table td{
+  vertical-align: middle;
+}
+.verify{
+  color: #009ef7 !important;
+}
+.user-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.page-link.active, .active > .page-link {
+  background-color: var(--bg-main-color) !important;
+  border-color:var(--text-main-color) !important;
+  color: var(--text-white-color) !important;
+}
+.page-link {
+  color: var(--text-main-color) !important;
+}
+.print{
+  border-left: 1px solid #eee;
+}
+.spinner-grow {
+  --bs-spinner-width: 1rem;
+  --bs-spinner-height: 1rem;
+  margin: 0 2px;
+}
+.content{
+  min-height: 80vh;
+}
+.dropdown-toggle::after{
+  display: none;
+}

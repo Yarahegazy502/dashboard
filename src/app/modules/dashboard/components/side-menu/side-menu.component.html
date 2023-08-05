@@ -1,0 +1,33 @@
+<div class="sidenav position-fixed bg-second-color" [ngClass]="collapsed ? 'sidenav-collapsed' : ''" *ngIf="!showSideMenu">
+  <div class="logo-container d-flex align-items-center w-100">
+    <button class="logo text-center scaleX-rtl bg-transparent border-0">
+      <img class="logo-img me-2" src="assets/imgs/logo.svg" alt="logo" />
+    </button>
+    <div class="logo-text text-white-color fs-4" *ngIf="collapsed">XDash</div>
+    <button class="arrow bg-white-color text-second-color border-0 position-absolute scaleX-rtl"
+      (click)="toggleCollapse()">
+      <i class="fas" [ngClass]="rotated?'fa-angles-left':'fa-angles-right'"></i>
+    </button>
+  </div>
+  <ul class="sidenav-nav d-flex align-items-center flex-column">
+    <li class="sidenav-nav-item w-100" *ngFor="let item of menuList;let i=index">
+      <i class="sidenav-link-icon2 w-100 text-white-color sidenav-link-icon py-3 text-center fs-6 fas {{ item.icon }}" (click)="toggleIcon()" *ngIf="!show"></i>
+      <a class="sidenav-nav-link position-relative d-flex align-items-center text-white-color" *ngIf="show"
+        (click)="handelClick(item)" [routerLink]="[item.routerLink]">
+        <i class="sidenav-link-icon mx-2 text-center fs-6 fas {{ item.icon }}" ></i>
+        <span class="sidenav-link-text ms-2" *ngIf="collapsed" >{{ item.text | translate
+          }}</span>
+        <i class="fas fa-angle-down angle position-absolute fs-5" [ngClass]="item.state?'toggleicon':''"
+          *ngIf="collapsed && item.children && item.children.length > 0 "></i>
+      </a>
+      <ul class="subnav" *ngIf="collapsed && item.children && item.children.length > 0 && item.state">
+        <li *ngFor="let i of item.children" class="subnav-item ms-4 my-4 d-flex align-items-center">
+          <a class="subnav-link text-white-color" *ngIf="collapsed && item.children && item.children.length > 0">
+            <i class="fa fa-circle me-3"></i>
+            <span *ngIf="collapsed" [routerLink]="[i.routerLink]">{{ i.text }}</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,19 @@
+.footer{
+  background-color: #ffffff;
+  position: relative;
+  bottom: 0;
+  z-index: 1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px !important; }
+.foot{
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
+  transition: all .5s ease;
+}
+.head-trimmed{
+  width: calc(100% - 16.5625rem);
+  margin-left: 16.5625rem !important;
+}
+.head-md-screen{
+  width: calc(100% - 5rem);
+  margin-left: 5rem !important;
+}

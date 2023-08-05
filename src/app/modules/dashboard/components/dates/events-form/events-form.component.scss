@@ -1,0 +1,17 @@
+.form-control, .ng-select .ng-select-container,.input-group-text {
+  background-color: #f5f8fa;
+  border: none !important;
+}
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color: var(--bg-main-color);
+}
+// .mat-form-field-appearance-outline .mat-form-field-infix {
+//   padding: 0em 0 1em 0 !important;
+// }
+// .mat-form-field-appearance-outline .mat-form-field-infix {
+//   margin-top: -8px !important;
+// }
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  // color: rgba(0,0,0,.12);
+  background-color: #f5f8fa !important;
+}

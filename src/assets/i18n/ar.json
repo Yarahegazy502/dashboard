@@ -1,0 +1,64 @@
+{
+  "ok":"تم",
+  "alertSuccessMsg":"تم تسجيل الدخول بنجاح",
+  "titles": {
+    "dashboard": "لوحة التحكم",
+    "statistics":"الاحصائيات",
+    "users":"المستخدمين",
+    "tasks":"المهام",
+    "product":"المنتج",
+    "dates":"المواعيد"
+  },
+  "form": {
+    "email": "البريد الالكتروني",
+    "password": "كلمه المرور",
+    "or": "او",
+    "login": {
+      "forgetPassword": "هل نسيت كلمه المرور ؟",
+      "login": "تسجيل الدخول",
+      "signInWithGoggle": "تسجيل الدخول بواسطه جوجل",
+      "notAMember": "ليس لديك جساب",
+      "signUp": "سجل"
+    },
+    "register": {
+      "name": "الاسم",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "register": "تسجيل",
+      "signUpWithGoggle": "تسجيل بواسطه جوجل",
+      "youAreAMember": "هل لديك حساب ؟",
+      "signIn": "تسجيل الدخول"
+    }
+  },
+  "header": {
+    "home": "الرئيسيه"
+  },
+  "userInfo": {
+    "name": "ماكس سميث",
+    "profile": "الملف الشخصي",
+    "project": "مشروع",
+    "subscribe": "اشتراكي",
+    "notification": "اشعارات",
+    "statement": "بيانات",
+    "account": "إعدادات الحساب",
+    "signOut": "تسجيل الخروج"
+  },
+  "language": {
+    "english": "انجليزي",
+    "arabic": "عربي"
+  },
+  "notification": {
+    "notification": "اشعارات",
+    "all": "الكل",
+    "unread": "غير مقرؤه",
+    "readMore": "قراءه المزيد "
+  },
+  "sideMenu": {
+    "statistic": "الإحصائيات",
+    "customer": "العميل",
+    "tasks":"المهام",
+    "supplier": "المورد",
+    "product":"المنتج",
+    "dates":"المواعيد"
+
+  }
+}

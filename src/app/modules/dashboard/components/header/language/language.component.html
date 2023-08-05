@@ -1,0 +1,30 @@
+<div class="language general-dropdown">
+  <div class="dropdown">
+    <a
+      class="dropdown-toggle d-flex align-items-center"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+    <img  *ngIf="currentLang == 'en'" src="assets/imgs/languages/english.svg" class="img-fit-cover ms-1 flag" alt="">
+    <img  *ngIf="currentLang == 'ar'" src="assets/imgs/languages/eg.svg" class="img-fit-cover ms-1 flag" alt="">
+    </a>
+    <div class="dropdown-menu round border-0">
+      <div class="px-3">
+        <ul class="navbar-nav2">
+          <li>
+            <a class="dropdown-item round d-flex align-items-center" (click)="tanslationService?.changeLang('en')">
+              <img src="assets/imgs/languages/english.svg" class="me-2 item-flag img-fit-cover" alt=""><span>{{"language.english"|translate}}</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item round d-flex align-items-center" (click)="tanslationService?.changeLang('ar')">
+             <img src="assets/imgs/languages/eg.svg" class="me-2 item-flag img-fit-cover" alt=""><span>{{"language.arabic"|translate}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

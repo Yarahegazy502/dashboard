@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~swiper/css";
+@import "~swiper/css/effect-cards";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+.timepicker {
+  width: 350px !important;
+  min-width: 300px !important;
+  .timepicker__header,
+  .clock-face__number > span.active,
+  .clock-face__clock-hand {
+    background-color: var(--bg-main-color) !important;
+  }
+  .timepicker-button > span {
+    color: var(--text-main-color) !important;
+  }
+  .timepicker-dial__control:focus,
+  .timepicker-dial__control:focus-visible {
+    outline: none !important;
+  }
+}
+
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+@import "assets/scss/cust-style.scss";
+
+[dir="rtl"] {
+  @import "assets/scss/bootstrap.minRTL.css";
+  @import "assets/scss/cust-style-rtl.scss";
+}

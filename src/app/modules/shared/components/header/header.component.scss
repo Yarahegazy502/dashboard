@@ -1,0 +1,27 @@
+.head{
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
+  z-index: 1;
+  transition: all .5s ease;
+  background-color: #f4f7fa;
+  top: 0;
+  .navbar{
+    height: 5rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 17px;
+    margin: 0 2px;
+    color: #a1a5b7 !important;
+  }
+}
+
+.head-trimmed{
+  width: calc(100% - 16.5625rem);
+  margin-left: 16.5625rem !important;
+}
+.head-md-screen{
+  width: calc(100% - 5rem);
+  margin-left: 5rem !important;
+}
+
+

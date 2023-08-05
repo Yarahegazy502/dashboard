@@ -1,0 +1,21 @@
+.contact{
+  // height: 110vh;
+  min-height: calc(100vh - 60px);
+  z-index: 0;
+  position: relative;
+  top: 0;
+  background-color: #f4f7fa;
+}
+.toggle-content{
+  width: calc(100% - 5rem);
+  margin-left: 5rem ;
+  transition: all .5s ease-in-out;
+}
+.body-trimmed{
+  width: calc(100% - 16.5625rem);
+  margin-left: 16.5625rem !important;
+}
+.body-md-screen{
+  width: calc(100% - 5rem);
+  margin-left: 5rem !important;
+}

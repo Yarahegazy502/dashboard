@@ -1,0 +1,100 @@
+<div class="notificaton general-dropdown">
+  <div class="dropdown" (clickOutside)="collapsed == true ? collapsed = false : '' " >
+    <a
+      class="dropdown-toggle d-flex align-items-center"
+      type="button"
+        (click)="collapsed = !collapsed"
+    >
+    <!-- fs-4 -->
+    <i class="fas fa-bell fs-4-1 dropdown-before"></i>
+    <span class="badge position-absolute fs-9 d-flex justify-content-center align-items-center">{{count}}</span>
+    </a>
+    <div class="dropdown-notification bg-white-color position-fixed round border-0" *ngIf="collapsed">
+      <div class="d-flex justify-content-between align-items-center mx-3 pt-3">
+        <div><h5 class="fs-5 fw-bold text-dark-color">{{"notification.notification"|translate}}</h5></div>
+        <!-- <i class="fa-solid fa-ellipsis fs-5"></i> -->
+        <div class="position-relative">
+          <!-- <a mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="text-dark-color">
+            <mat-icon (click)="collapsed = true">more_vert</mat-icon>
+          </a>
+          <mat-menu #menu="matMenu" class="me-2">
+            <button mat-menu-item>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu> -->
+          <div class="dropdown">
+            <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </a>
+
+            <ul class="dropdown-menu child-dropdown-menu border-0 p-2 py-3 bg-white-color">
+              <li><a class="dropdown-item round" href="#">Action</a></li>
+              <li><a class="dropdown-item round" href="#">Another action</a></li>
+              <li><a class="dropdown-item round" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <ul class="nav nav-pills mb-3 m-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link fs-5" [ngClass]="{ active: activeCategory === 'all' }" (click)="onChangeCategory('all')">
+          {{"notification.all"|translate}}
+          </a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link fs-5" [ngClass]="{ active: activeCategory === 'unread' }" (click)="onChangeCategory('unread')">
+          {{"notification.unread"|translate}}
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content mx-3 p-2" id="pills-tabContent">
+        <div *ngIf="activeCategory === 'all'">
+        <div class="border-bottom py-3" *ngFor="let item of allNotifications">
+          <div [class.active-notification]="item.seen=='unread'">
+            <div class="d-flex align-items-center">
+              <div class="not-img me-2">
+                <img [src]="item.img" class="rounded-circle" alt="">
+              </div>
+              <div >
+                <p class="fs-6 lh-1">{{item.text}}</p>
+              </div>
+            </div>
+            <small class="mt-1 d-block d-flex justify-content-end">{{item.createdAt | timeago}}</small>
+          </div>
+        </div>
+        <button class="border-0 my-3 bg-transparent">More Notifications</button>
+        </div>
+        <div *ngIf="activeCategory === 'unread'">
+        <div  *ngFor="let item of unreadNotifications">
+          <div class="border-bottom py-3" *ngIf="item.seen=='unread'">
+            <div [class.active-notification]="item.seen=='unread'">
+              <div class="d-flex align-items-center">
+                <div class="not-img me-2">
+                  <img [src]="item.img" class="rounded-circle" alt="">
+                </div>
+                <div >
+                  <p class="fs-6 lh-1">{{item.text}}</p>
+                </div>
+              </div>
+              <small class="mt-1 d-block d-flex justify-content-end">{{item.createdAt | timeago}}</small>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div (clickOutside)="d()">
+  <a (click)="collapsed = !collapsed"
+  >notifiaction</a>
+  <div class="dp" *ngIf="collapsed">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis numquam autem voluptatibus sequi tempora odit soluta voluptates alias? Quod maxime omnis consectetur id excepturi at veritatis nisi iure dolores maiores.</p>
+  </div>
+</div> -->

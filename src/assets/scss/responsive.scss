@@ -1,0 +1,249 @@
+// ---- Owl-Carousel Media Queries ----//
+@media (max-width: 767px) {
+
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-nav .owl-prev {
+    display: none !important;
+  }
+}
+
+//----- Components -----//
+@media (max-width: 767px) {
+
+  .fs-sm-2 {
+    font-size: 2rem;
+  }
+
+  .fs-sm-1-2 {
+    font-size: 18px !important;
+  }
+
+  .w-small-100 {
+    width: 100% !important;
+  }
+
+  .center-el-sm {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .text-center-small {
+    text-align: center !important;
+  }
+
+  h2.deco::after {
+    left: 30%;
+  }
+
+  .btn-solid-main {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .fs-sm-1-5 {
+    font-size: 1.5rem !important;
+  }
+
+  .mt-small-1 {
+    padding-top: 1rem;
+  }
+
+  .h-small-40 {
+    height: 40rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .mt-small-0 {
+    margin-top: 0 !important;
+  }
+
+  .mb-small-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .mt-small-2 {
+    margin-top: 2rem !important;
+  }
+
+  .h-small-40 {
+    height: 40rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .padding-small-0 {
+    padding: 0 !important;
+  }
+
+  .paddingX-small-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .paddingY-small-0 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .margin-small-0 {
+    margin: 0 !important;
+  }
+
+  .marginX-small-0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .marginY-small-0 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+}
+
+@media (min-width: 992px) {}
+
+@media (max-width: 991px) {
+  .padding-md-0 {
+    padding: 0 !important;
+  }
+
+  .paddingX-md-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .paddingY-md-0 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .margin-md-0 {
+    margin: 0 !important;
+  }
+
+  .marginX-md-0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .marginY-md-0 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .collapse {
+    position: relative;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    background-color: var(--bg-white-color) !important;
+    border-radius: 10px;
+    box-shadow: var(--nav-shadow);
+    padding: 20px;
+  }
+
+  .general-dropdown .dropdown-menu.show {
+    top: 2.3rem !important;
+    position: absolute;
+    // left: 0;
+    width: 10rem !important;
+  }
+
+  .general-dropdown.quick-links .dropdown-menu {
+    width: 22rem !important;
+    left: inherit !important;
+    top: -7.5rem !important;
+  }
+
+  .general-dropdown.user-info .dropdown-menu {
+    width: 17.2rem !important;
+  }
+
+  .my-medium-3 {
+    padding: 1rem 0;
+  }
+
+  .drop-menu-centeral {
+    position: absolute !important;
+    transform: translateX(-30%);
+  }
+
+  .search .search-menu {
+    top: 0rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  // .sidenav{
+  //   transform: translateX(-80px);
+  // }
+  // .contact,.head{
+  //   width: 100% !important;
+  //   margin-left: 0 !important;
+  // }
+  // .general-dropdown.quick-links .dropdown-menu {
+  //   left: inherit !important;
+  // }
+.shareSocial{
+  left: 50% !important;
+  transform: translate(-50%,30px) !important;
+}
+
+}
+
+
+@media (max-width: 565px) {
+  .dropdown-notification {
+    width: 20rem !important;
+  }
+
+  .dropdown-chat {
+    width: 20rem !important;
+  }
+
+  .search .search-menu {
+    width: 17rem !important;
+  }
+
+  .shareSocial{
+    width: 260px !important;
+    transform: translate(-78%, 30px) !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .dropdown-notification {
+    width: 90% !important;
+  }
+
+  .dropdown-chat {
+    width: 90% !important;
+  }
+
+  .general-dropdown.quick-links .dropdown-menu {
+    width: 17rem !important;
+    left: inherit !important;
+  }
+
+  .search-menu {
+    width: 15rem;
+  }
+  .shareSocial{
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .dropdown-notification {
+    width: 80% !important;
+  }
+
+  .dropdown-chat {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 350px) {}

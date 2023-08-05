@@ -1,0 +1,77 @@
+<div class="events p-4">
+  <div mat-dialog-content>
+    <div  class="d-flex justify-content-between align-items-center pb-3 mb-4 border-bottom">
+      <h3 class="fs-5">Add a New Event</h3>
+     <i class="fas fa-close text-muted-color fs-6" (click)="onNoClick()"></i>
+    </div>
+    <form [formGroup]="events">
+      <div class="mb-4">
+        <label for="name" class="form-label mb-2 text-dark-color">Event Name</label>
+        <input type="text" class="form-control" id="name" formControlName="title" placeholder="Event Name" >
+      </div>
+      <div class="mb-4">
+        <label for="desc" class="form-label mb-2 text-dark-color">Event Description</label>
+        <input type="text" class="form-control" id="desc" placeholder="Event Description" formControlName="desc">
+      </div>
+      <div class="row">
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input  [rangePicker]="picker">
+            <input matStartDate #sDate placeholder="Start date">
+            <input matEndDate #eDate placeholder="End date">
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field> -->
+        <div class="col-md-6">
+          <label for="" class="form-label mb-2 text-dark-color">Event Start Date</label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput [matDatepicker]="datepicker" placeholder="MM/DD/YYYY" formControlName="sDate">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <label for="" class="form-label mb-2 text-dark-color">Event End Date</label>
+          <mat-form-field appearance="outline" class="example-form-field w-100">
+            <input matInput [matDatepicker]="datepicker2" placeholder="MM/DD/YYYY" formControlName="eDate">
+            <mat-datepicker-toggle matSuffix [for]="datepicker2"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker2>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <div class="default-time-example mb-4">
+            <label for="" class="form-label mb-2 text-dark-color">Event Start Time</label>
+            <input aria-label="default time" [ngxTimepicker]="defaultValue" [format]="24"placeholder="hh:mm:ss" class="form-control" formControlName="sTime">
+            <ngx-material-timepicker #defaultValue></ngx-material-timepicker>
+       </div>
+        </div>
+        <div class="col-md-6">
+          <div class="default-time-example mb-4">
+            <label for="" class="form-label mb-2 text-dark-color">Event End Time</label>
+            <input aria-label="default time" [ngxTimepicker]="defaultValue2" [format]="24" placeholder="hh:mm:ss" class="form-control" formControlName="eTime">
+            <ngx-material-timepicker #defaultValue2></ngx-material-timepicker>
+       </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button class="btn bg-light me-3" (click)="onNoClick()">No Thanks</button>
+    <!-- (click)="addEvent(tit.value,desc.value,sDate.value,eDate.value,sTime.value,eTime.value)"  -->
+    <button class="btn bg-main-color" [mat-dialog-close]="events.value" cdkFocusInitial>Ok</button>
+  </div>
+  <!-- {title:tit.value,start:(sDate.value+'T'+sTime.value),end:(eDate.value+'T'+eTime.value),color:'#ef305e'}" -->
+</div>
+

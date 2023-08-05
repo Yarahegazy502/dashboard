@@ -1,0 +1,7 @@
+<!-- <div class="dash-outlet">
+  <router-outlet></router-outlet>
+</div> -->
+<app-side-menu (onToggleSideNav)="onToggleSideNav($event)"></app-side-menu>
+<app-header [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-header>
+<app-content [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-content>
+<app-footer [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-footer>

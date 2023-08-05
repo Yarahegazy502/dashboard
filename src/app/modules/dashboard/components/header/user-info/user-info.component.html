@@ -1,0 +1,48 @@
+<div class="user-info general-dropdown">
+  <div class="dropdown">
+    <a class="dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <img class="user-img round" [src]="userData.photo" onerror="this.src='assets/imgs/person3.jpg'" alt="profile" />
+      <div class="pulse position-absolute" [class.active-user]="activeUser"></div>
+    </a>
+    <div class="dropdown-menu round border-0 m-0">
+      <div class="d-flex align-items-center p-3">
+        <div class="me-3">
+          <img class="user-img2 round" [src]="userData.photo" onerror="this.src='assets/imgs/person3.jpg'" />
+        </div>
+        <div class="">
+          <h5 class="fw-bold">
+            {{userData.name}} <span class="fs-9 round px-1 d-inline-block success">pro</span>
+          </h5>
+          <p class="lh-base fs-9 text-muted-color">{{userData.email}}</p>
+        </div>
+      </div>
+      <hr class="my-0" />
+      <div class="d-flex py-3 px-2">
+        <ul class="navbar-nav2 w-100">
+          <li>
+            <a class="dropdown-item round" routerLink="/dashboard/profile/overview">{{"userInfo.profile"|translate}}</a>
+          </li>
+          <li>
+            <a class="dropdown-item round">{{"userInfo.project"|translate}}</a>
+          </li>
+          <li>
+            <a class="dropdown-item round">{{"userInfo.subscribe"|translate}}</a>
+          </li>
+          <li class="d-flex align-items-center justify-content-between dropdown-item round ">
+            <a class="">{{"userInfo.notification"|translate}}</a>
+            <span class="badge bg-main-color d-flex justify-content-center align-items-center">0</span>
+          </li>
+          <li>
+            <a class="dropdown-item round">{{"userInfo.statement"|translate}}</a>
+          </li>
+          <li>
+            <a class="dropdown-item round">{{"userInfo.account"|translate}}</a>
+          </li>
+          <li>
+            <a class="dropdown-item round sign-out" (click)="signOut()">{{"userInfo.signOut"|translate}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

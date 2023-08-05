@@ -1,0 +1,56 @@
+<div class="head shadow-sm" [ngClass]="getHeadClass()" (clickOutside)="toggle == true ? toggle = false :''">
+  <nav class="navbar navbar-expand-lg bg-white-color">
+    <div class="container-fluid">
+      <!-- <img class="logo scaleX-rtl" src="assets/imgs/logo.svg" alt="logo" /> -->
+      <a class="navbar-brand"><h2 class="text-center fw-bold text-second-color d-flex align-items-center py-3">
+
+        <i class="fa-brands fa-xing fs-2 text-main-color me-1"></i>
+         XDash</h2></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="!toggle"
+        (click)="toggle = !toggle"
+
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" [class.show]="toggle">
+        <ul class="navbar-nav align-items-lg-center me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show">{{"header.home"|translate}}</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><app-search></app-search></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><app-chat></app-chat></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><app-quick-links></app-quick-links></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><app-theme></app-theme></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><app-notification></app-notification></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><app-language></app-language></a>
+          </li>
+          <li>
+            <a class="nav-link"><app-user-info></app-user-info></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

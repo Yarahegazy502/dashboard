@@ -1,0 +1,48 @@
+<div class="swiperr mb-4">
+  <swiper [effect]="'cards'" [grabCursor]="true" class="mySwiper"
+  (slideChange)="onSlideChange($event)">
+    <ng-template swiperSlide  *ngFor="let s of arrayList" #s>
+      <div class="slide1 slide">
+        <div class="">
+          <img [src]="s.img" class="radius swiper-img w-fit-content" alt="">
+        </div>
+      <div class="content px-3">
+        <h5 class="fs-7">{{s.name}}</h5>
+        <strong class="text-main-color d-block my-3 fs-6">{{s.position}}</strong>
+        <p>{{s.desc}}</p>
+      </div>
+      <div class="cont">
+        <div class="stars d-flex justify-content-center mt-4">
+          <ngx-star-rating [(ngModel)]="s.rate" [id]="'s.rate'" ></ngx-star-rating >
+        </div>
+        <!-- <div>Rating: {{ rating3 }}</div> -->
+      </div>
+    </div></ng-template>
+  </swiper>
+
+  <!-- <div *ngFor="let i of data">{{i.n}}</div> -->
+  <div>{{arrayList[activeIn].data.p}}</div>
+
+  <div class="my-5 bg-white-color shad round p-4">
+    <table class="table">
+      <thead>
+        <tr class="border-bottom text-muted-color fs-8">
+          <th scope="col">Date</th>
+          <th scope="col">Description</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Invoice</th>
+          <th scope="col">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of arrayList[activeIn].data;let ii=index" class="text-muted-color fs-8" [class.border-bottom]="ii<arrayList[activeIn].data.length-1">
+          <td>{{i.item}}</td>
+          <td> <span [class]="i.btnColor" class="round p-2 fs-9 fw-bold">{{i.status}}</span></td>
+          <td>{{i.device}}</td>
+          <td>{{i.ip}}</td>
+          <td>{{i.time}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

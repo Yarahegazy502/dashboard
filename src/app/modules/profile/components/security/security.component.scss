@@ -1,0 +1,34 @@
+.btn.activeBtn{
+  border-bottom: 2px solid var(--text-main-color);
+  border-radius: 0px;
+  color: var(--text-main-color);
+}
+.btn.activeTwoBtn{
+  background-color: #f8f9fa;
+}
+.rates{
+  border: 1px dashed #ccc;
+  .rate-img{
+    width: 50px;
+  }
+}
+.btnsac{
+  border: 1px solid #eee;
+}
+#myChart{
+  height: 350px;
+}
+
+table > :not(caption) > * > * {
+  padding: 1.2rem 0.5rem !important;
+}
+.table{
+  overflow-x: auto;
+  width: 100%;
+  min-width: 570px;
+}
+
+.copy:hover{
+  color: #3eb5f8;
+  // background-color: #f5f8fa;
+}

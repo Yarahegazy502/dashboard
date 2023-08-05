@@ -1,0 +1,150 @@
+<div class="referrals">
+  <div class="p-4 round shad bg-white-color">
+    <h4 class="fs-4">Security Summary</h4>
+    <div class="row my-4 mb-5">
+      <div class="col-lg-6 col-md-12">
+        <div>
+          <h5 class="fs-5">How to use Referral Program</h5>
+          <p class="text-muted-color lh-base mt-2 me-3">
+            Use images to enhance your post, improve its flow, add humor and
+            explain complex topics
+          </p>
+          <button class="btn btn-light text-muted-color mt-3 px-3 py-2">
+            Get Started
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div>
+          <h5 class="fs-5">Your Referral Link</h5>
+          <p class="text-muted-color lh-base mt-2 me-3">
+            Plan your blog post by choosing a topic, creating an outline conduct
+            research, and checking facts
+          </p>
+          <button class="btn btn-light text-muted-color mt-3 px-3 py-2 me-2">
+            https://keenthemes.com/reffer/?refid=345re66
+          </button>
+          <button
+            class="btn btn-light text-muted-color mt-3 px-3 py-2"
+            ngxClipboard
+            [cbContent]="'https://keenthemes.com/reffer/?refid=345re66'"
+          >
+            Copy Link
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="rates p-4 rounded mb-2 text-center">
+          <p class="lav fs-5 mb-2">Net Earnings</p>
+          <p class="fs-1 fw-bold">$ 63,240</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="rates p-4 rounded mb-2 text-center">
+          <p class="text-success-color fs-5 mb-2">Balance</p>
+          <p class="fs-1 fw-bold">$ 8,530</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="rates p-4 rounded mb-2 text-center">
+          <p class="text-danger-color fs-5 mb-2">Avg Deal Size</p>
+          <p class="fs-1 fw-bold">$ 2,600</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="rates p-4 rounded mb-2 text-center">
+          <p class="text-confirm-color fs-5 mb-2">Referral Signups</p>
+          <p class="fs-1 fw-bold">$ 783</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-muted-color lh-base my-3">
+      Writing headlines for blog posts is as much an art as it is a science, and
+      probably warrants its own post, but for now, all I’d advise is
+      experimenting with what works for your audience, especially if it’s not
+      resonating with your audience
+    </p>
+
+    <div
+      class="mb-3 d-md-flex justify-content-between align-items-center round p-4 alert alert-confirm"
+    >
+      <div class="row w-100">
+        <div class="col-md-9">
+          <h5 class="fs-7">Withdraw Your Money to a Bank Account</h5>
+          <p class="text-muted-color me-4 mt-2 lh-base">
+            Withdraw money securily to your bank account. Commision is $25 per
+            transaction under $50,000
+          </p>
+        </div>
+        <div
+          class="col-md-3 mt-3 mt-md-0 d-md-flex justify-content-md-end justify-content-start align-items-center"
+        >
+          <button
+            class="btn bg-main-color text-white-color h-fit-content me-2"
+          >
+            Withdraw Money
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 round shad bg-white-color">
+    <div
+      class="d-sm-flex justify-content-between align-items-center px-4 pt-4 border-bottom"
+    >
+      <h4 class="fs-5">Security Summary</h4>
+      <div class="mt-sm-0 mt-3">
+        <a
+          class="btn pb-4 fw-bold fs-7 b"
+          (click)="frame('month')"
+          [ngClass]="{ activeBtn: activeCategory === 'month' }"
+          >Month</a
+        >
+        <a
+          class="btn pb-4 fw-bold fs-7 b"
+          (click)="frame('day')"
+          [ngClass]="{ activeBtn: activeCategory === 'day' }"
+          >Year</a
+        >
+        <a
+          class="btn mx-2 pb-4 fw-bold fs-7 b"
+          (click)="frame('week')"
+          [ngClass]="{ activeBtn: activeCategory === 'week' }"
+          >All Time</a
+        >
+      </div>
+    </div>
+    <div class="m-4">
+      <div class="table-content pt-0 table-responsive">
+        <table class="table">
+          <thead>
+            <tr class="border-bottom fs-8">
+              <th scope="col">Order ID</th>
+              <th scope="col">User</th>
+              <th scope="col">Date</th>
+              <th scope="col">Bonus</th>
+              <th scope="col">Profit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let i of tableContent; let ii = index"
+              class="text-muted-color fs-8"
+              [class.border-bottom]="ii < tableContent.length - 1"
+            >
+              <td>{{ i.order }}</td>
+              <td>{{ i.user }}</td>
+              <td>{{ i.date }}</td>
+              <td>{{ i.bonus }}</td>
+              <td class="text-success-color">{{ i.profit }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

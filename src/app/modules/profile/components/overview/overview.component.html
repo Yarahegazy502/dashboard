@@ -1,0 +1,240 @@
+<div class="overview">
+  <div class="">
+    <div class="profile-details round bg-white-color py-4 ">
+      <div class="d-flex justify-content-between align-items-center px-4">
+        <h4 class="fs-5">Profile Details</h4>
+        <a class="btn bg-main-color border-0 text-white-color" (click)="edit()">Edit Profile</a>
+      </div>
+      <hr>
+      <div class="px-4">
+        <div class="row pt-4">
+          <div class="col-md-4">
+            <p class="text-muted-color">Full Name</p>
+          </div>
+          <div class="col-md-8">
+            <h5 class="mb-4">{{userData.name}}</h5>
+          </div>
+
+          <div class="col-md-4">
+            <p class="text-muted-color">Company</p>
+          </div>
+          <div class="col-md-8">
+            <p class="mb-4">Keenthemes</p>
+          </div>
+
+          <div class="col-md-4">
+            <p class="text-muted-color">Contact Phone <i class="fas fa-circle-exclamation"></i></p>
+          </div>
+          <div class="col-md-8">
+            <h5 class="mb-4">044 3276 454 935 <span class="fs-9 round p-1 px-2 d-inline-block bg-success-color text-white-color">Verified</span></h5>
+          </div>
+
+          <div class="col-md-4">
+            <p class="text-muted-color">Company Site</p>
+          </div>
+          <div class="col-md-8">
+            <p class="mb-4">keenthemes.com</p>
+          </div>
+
+          <div class="col-md-4">
+            <p class="text-muted-color">Country <i class="fas fa-circle-exclamation"></i></p>
+          </div>
+          <div class="col-md-8">
+            <h5 class="mb-4">Germany</h5>
+          </div>
+
+          <div class="col-md-4">
+            <p class="text-muted-color">Communication</p>
+          </div>
+          <div class="col-md-8">
+            <h5 class="mb-4">Email, Phone</h5>
+          </div>
+
+          <div class="col-md-4">
+            <p class="text-muted-color">Allow Changes</p>
+          </div>
+          <div class="col-md-8">
+            <p class="mb-4">Yes</p>
+          </div>
+        </div>
+        <div class="alert alert-warning d-flex align-items-center p-4 mt-4">
+          <i class="fas fa-circle-exclamation me-3 fs-3 text-warning"></i>
+          <div>
+            <h4 class="fs-5 mb-2 text-dark-color">We need your attention!</h4>
+            <p class="text-muted-color">Your payment was declined. To start using tools, please <span class="text-main-color">Add Payment Method</span>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="row mt-4">
+        <div class="col-lg-8 col-md-7 mt-3">
+          <div class="shad bg-white-color p-4 round h-100">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="fs-5 mb-1">Top Selling Categories</h3>
+                <small class="text-muted-color fs-8">8k social visitors</small>
+              </div>
+              <div>
+                <button class="btn bg-light border-0 text-muted-color p-0 px-1"><i class="fas fa-ellipsis"></i></button>
+              </div>
+            </div>
+            <div >
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-5 mt-3">
+          <div class="shad bg-white-color p-4 text-center round h-100">
+            <p class="fs-4 lh-base">Have you tried
+              new <span class="fw-bold">Mobile Application ?</span></p>
+              <div class="my-4">
+                <img src="assets/imgs/mobile.svg" class="w-75" alt="">
+              </div>
+              <div>
+                <button class="btn bg-main-color border-0 me-2 text-white-color">Try Now</button>
+                <button class="btn bg-light border-0  text-muted-color">Learn More</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="row my-4">
+        <div class="col-lg-4 mt-3">
+          <div class="bg-white-color round shad p-4 h-100">
+              <div>
+                <h3 class="fs-5 mb-1">Product Delivery</h3>
+                <small class="text-muted-color fs-8 ">1M Products Shipped so far</small>
+                <button class="btn bg-light border-0 text-muted-color d-block mt-3">Order Details</button>
+              </div>
+
+              <div class="order-details pe-3">
+                <div class="rates p-3 rounded mt-4" *ngFor="let p of productsDelivery">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <img [src]="p.img" class="rate-img" alt="">
+                    <span>{{p.title}}</span>
+                    </div>
+                    <div>
+                      <button class="btn bg-light border-0 text-muted-color p-0 px-1"><i class="fas fa-ellipsis"></i></button>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <p><span class="text-muted-color">To:</span> {{p.email}}</p>
+                    <span class="fs-9 round p-1 px-2 d-inline-block" [class]="p.bg">{{p.btn}}</span>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+        <div class="col-lg-8 mt-3">
+          <div class="bg-white-color round shad p-4 h-100">
+            <div class="d-md-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="fs-5 mb-1">Stock Report</h3>
+              <small class="text-muted-color fs-8 ">Total 2,356 Items in the Stock</small>
+              </div>
+              <div class="d-sm-flex align-items-center ">
+                <div class="general-dropdown me-4 mt-3">
+                  <div class="dropdown d-flex">
+                    <span class="text-muted-color me-3 fs-8">Cateogry</span>
+                    <a
+                      class="dropdown-toggle d-flex align-items-center text-dark-color fs-8"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                    Show All <i class="fas fa-angle-down ms-2"></i>
+                    </a>
+
+                    <div class="dropdown-menu round border-0">
+                      <div class="px-3">
+                        <ul class="navbar-nav2">
+                          <li>
+                            <a class="dropdown-item round d-flex align-items-center">
+                              <span>knkn</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item round d-flex align-items-center">
+                             <span>jjhj</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="general-dropdown me-4 mt-3">
+                  <div class="dropdown d-flex">
+                    <span class="text-muted-color me-3 fs-8">Status
+                      </span>
+                    <a
+                      class="dropdown-toggle d-flex align-items-center text-dark-color fs-8"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                    Show All <i class="fas fa-angle-down ms-2"></i>
+                    </a>
+
+                    <div class="dropdown-menu round border-0">
+                      <div class="px-3">
+                        <ul class="navbar-nav2">
+                          <li>
+                            <a class="dropdown-item round d-flex align-items-center">
+                              <span>knkn</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item round d-flex align-items-center">
+                             <span>jjhj</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn bg-light border-0 text-muted-color d-block mt-3">View Stock</button>
+              </div>
+
+            </div>
+
+            <div class="table-content mt-5 table-responsive">
+              <table class="table">
+                <thead>
+                  <tr class="border-bottom text-muted-color fs-8">
+                    <th scope="col">ITEM</th>
+                    <th scope="col">PRODUCT ID</th>
+                    <th scope="col">DATA ADDED</th>
+                    <th scope="col">PRICE</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">QTY</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of tableContent ;let ii=index" [class.border-bottom]="ii<tableContent.length-1">
+                    <th>{{i.item}}</th>
+                    <td>{{i.pId}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.price}}</td>
+                    <td> <span [class]="i.btnColor" class="round p-2 fs-9">{{i.status}}</span></td>
+                    <td>{{i.qty}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
